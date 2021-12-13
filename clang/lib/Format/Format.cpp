@@ -462,6 +462,7 @@ struct ScalarEnumerationTraits<FormatStyle::SpaceBeforeParensStyle> {
                 FormatStyle::SBPO_NonEmptyParentheses);
     IO.enumCase(Value, "Always", FormatStyle::SBPO_Always);
     IO.enumCase(Value, "Custom", FormatStyle::SBPO_Custom);
+	IO.enumCase(Value, "FunctionLikeExceptSizeof", FormatStyle::SBPO_FunctionLikeExceptSizeof);
 
     // For backward compatibility.
     IO.enumCase(Value, "false", FormatStyle::SBPO_Never);

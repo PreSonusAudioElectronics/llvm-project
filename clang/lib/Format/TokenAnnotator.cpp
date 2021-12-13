@@ -3260,7 +3260,8 @@ bool TokenAnnotator::spaceRequiredBefore(const AnnotatedLine &Line,
   if (Style.isCpp()) {
     // Space between import <iostream>.
     // or import .....;
-    if (Right.is(tok::l_paren) && !Left.isOneOf(tok::kw_if, tok::kw_else, tok::kw_while, tok::kw_for, tok::kw_switch, tok::kw_sizeof) && !Line.First->Next->is(tok::pp_define))
+    if (Style.SpaceBeforeParens == FormatStyle::SBPO_FunctionLikeExceptSizeof &&
+        Right.is(tok::l_paren) && !Left.isOneOf(tok::kw_if, tok::kw_else, tok::kw_while, tok::kw_for, tok::kw_switch, tok::kw_sizeof) && !Line.First->Next->is(tok::pp_define))
       return true;
     if (Left.is(Keywords.kw_import) && Right.isOneOf(tok::less, tok::ellipsis))
       return true;

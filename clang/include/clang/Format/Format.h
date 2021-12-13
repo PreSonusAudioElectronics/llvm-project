@@ -3317,6 +3317,8 @@ struct FormatStyle {
     /// Configure each individual space before parentheses in
     /// `SpaceBeforeParensOptions`.
     SBPO_Custom,
+	SBPO_FunctionLikeExceptSizeof,
+	/// Before Functions and Function Like Macros
   };
 
   /// Defines in which cases to put a space before opening parentheses.
